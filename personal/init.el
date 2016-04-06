@@ -1,11 +1,27 @@
-;;; init-clj-refactor.el --- Requires clj-refactor
-;;; Commentary:
-;;; Require clj-refactor, add to clojure-mode, set up keybinding.
-;;; Code:
+;;; Fonts
+;; Because Monaco is awesome!
+(set-frame-font "Monaco-16" nil t)
+;; Set font-size to 16.
+;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
+(set-face-attribute 'default nil :height 160)
+
+;;; Keys
+;; Command is meta, option is super
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+
+;;; Prelude customization
+(setq prelude-guru nil)
+
+
+;;; ag setup and customization
+(prelude-require-package 'ag)
+
+
+;;; clj-refactor setup and customization
 (prelude-require-package 'clj-refactor)
 
 (defun pretty-fns ()
-  "fns become ƒ"
   (font-lock-add-keywords
    nil `(("(\\(fn\\)[\[[:space:]]"
           (0 (progn (compose-region (match-beginning 1) (match-end 1)
@@ -14,7 +30,6 @@
 
 
 (defun pretty-lambdas ()
-  "anon fns become lambda"
   (font-lock-add-keywords
    nil `(("\\(#\\)("
           (0 (progn (compose-region (match-beginning 1) (match-end 1)
@@ -23,7 +38,6 @@
 
 
 (defun pretty-sets ()
-  "sets become ∈"
   (font-lock-add-keywords
    nil `(("\\(#\\){"
           (0 (progn (compose-region (match-beginning 1) (match-end 1)
@@ -41,6 +55,11 @@
 (add-hook 'clojure-mode-hook 'pretty-fns)
 (add-hook 'clojure-mode-hook 'pretty-sets)
 (add-hook 'clojure-mode-hook 'pretty-lambdas)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
-(provide 'init-clj-refactor)
-;;; init-clj-refactor.el ends here
+
+;;; diff-hl fix for magit
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+
+;;; multiple cursors setup
+(prelude-require-package 'multiple-cursors)
