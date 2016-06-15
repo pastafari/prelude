@@ -1,10 +1,3 @@
-;;; Fonts
-;; Because Monaco is awesome!
-(set-frame-font "Monaco-16" nil t)
-;; Set font-size to 16.
-;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
-(set-face-attribute 'default nil :height 160)
-
 ;;; Keys
 ;; Command is meta, option is super
 (setq mac-command-modifier 'meta)
@@ -12,7 +5,6 @@
 
 ;;; Prelude customization
 (setq prelude-guru nil)
-
 
 ;;; ag setup and customization
 (prelude-require-package 'ag)
@@ -56,10 +48,13 @@
 (add-hook 'clojure-mode-hook 'pretty-sets)
 (add-hook 'clojure-mode-hook 'pretty-lambdas)
 (add-hook 'clojure-mode-hook 'paredit-mode)
-
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;;; diff-hl fix for magit
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ;;; multiple cursors setup
 (prelude-require-package 'multiple-cursors)
+
+;;; create test file if it doesn't exist
+(setq projectile-create-missing-test-files t)
