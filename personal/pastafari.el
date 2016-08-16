@@ -9,6 +9,8 @@
 ;;; ag setup and customization
 (prelude-require-package 'ag)
 
+;; Use Helm everywhere
+(require 'prelude-helm-everywhere)
 
 ;;; clj-refactor setup and customization
 (prelude-require-package 'clj-refactor)
