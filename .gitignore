@@ -21,3 +21,4 @@ session*
 tramp
 /var/pcache
 /.mc-lists.el
+/abbrev_defs
