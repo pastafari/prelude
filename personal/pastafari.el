@@ -50,7 +50,6 @@
 (add-hook 'clojure-mode-hook 'pretty-sets)
 (add-hook 'clojure-mode-hook 'pretty-lambdas)
 (add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;;; diff-hl fix for magit
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
@@ -60,3 +59,6 @@
 
 ;;; create test file if it doesn't exist
 (setq projectile-create-missing-test-files t)
+
+;; elm-mode
+(prelude-require-package 'elm-mode)
