@@ -20,5 +20,5 @@ session*
 .cask
 tramp
 /var/pcache
-/.mc-lists.el
-/abbrev_defs
+.emacs.desktop
+.emacs.desktop.lock
