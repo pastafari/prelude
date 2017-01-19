@@ -69,3 +69,7 @@
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq-default indent-tabs-mode nil)
+
+
+;; json-mode
+(setq json-reformat:indent-width 2)
