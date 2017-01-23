@@ -62,14 +62,21 @@
 
 ;; elm-mode
 (prelude-require-package 'elm-mode)
-
+(setq elm-format-on-save t)
 
 ;; web-mode
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq-default indent-tabs-mode nil)
-
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.js[x]?\\'")))
 
 ;; json-mode
 (setq json-reformat:indent-width 2)
+
+
+;; tab width and tab stops
+(setq tab-width 2)
+(setq-default tab-stop-list (number-sequence 2 100 2))
