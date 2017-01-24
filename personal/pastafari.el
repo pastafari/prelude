@@ -72,6 +72,9 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")))
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-column-highlight t)
 
 ;; json-mode
 (setq json-reformat:indent-width 2)
