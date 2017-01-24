@@ -83,3 +83,14 @@
 ;; tab width and tab stops
 (setq tab-width 2)
 (setq-default tab-stop-list (number-sequence 2 100 2))
+
+;; TODO: cleanup org-mode setup, extract into separate file maybe?
+;; org-journal
+(prelude-require-package 'org-journal)
+(setq org-journal-dir "~/Dropbox/orgs/journal")
+
+;; org-agenda
+(setq org-agenda-files '("~/Dropbox/orgs/gtd.org"))
+
+;; org-refile
+(setq org-refile-targets '(("~/Dropbox/orgs/gtd.org" :maxlevel . 1)))
