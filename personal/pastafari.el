@@ -96,3 +96,9 @@
 
 ;; org-refile
 (setq org-refile-targets '(("~/Dropbox/orgs/gtd.org" :maxlevel . 1)))
+
+;; cider
+(add-hook 'cider-repl-mode-hook #'paredit-mode)
+
+;; projectile
+(setq projectile-enable-caching t)
