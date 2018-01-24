@@ -102,3 +102,6 @@
 
 ;; projectile
 (setq projectile-enable-caching t)
+
+;; Line numbers everywhere
+(global-linum-mode t)
