@@ -86,16 +86,19 @@
 (setq-default tab-stop-list (number-sequence 2 100 2))
 (setq standard-indent 2)
 
-;; TODO: cleanup org-mode setup, extract into separate file maybe?
-;; org-journal
-(prelude-require-package 'org-journal)
-(setq org-journal-dir "~/Dropbox/orgs/journal")
+;; org-directory
+(setq org-directory "~/Dropbox/orgs")
 
 ;; org-agenda
-(setq org-agenda-files '("~/Dropbox/orgs/gtd.org"))
+(setq org-agenda-files `("~/Dropbox/Apps/MobileOrg/" ,org-directory))
 
-;; org-refile
-(setq org-refile-targets '(("~/Dropbox/orgs/gtd.org" :maxlevel . 1)))
+;; org-capture
+(setq org-default-notes-file (concat org-directory "/gtd.org"))
+(define-key global-map "\C-cc" 'org-capture)
+
+;; org-journal stuff
+(setq org-journal-dir (concat org-directory "/journal"))
+
 
 ;; cider
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
