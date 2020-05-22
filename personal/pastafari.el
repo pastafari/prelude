@@ -104,19 +104,6 @@
 (setq-default tab-stop-list (number-sequence 2 100 2))
 (setq standard-indent 2)
 
-;; org-directory
-(setq org-directory "~/Dropbox/orgs")
-
-;; org-agenda
-(setq org-agenda-files `("~/Dropbox/Apps/MobileOrg/" ,org-directory))
-
-;; org-capture
-(setq org-default-notes-file (concat org-directory "/gtd.org"))
-(define-key global-map "\C-cc" 'org-capture)
-
-;; org-journal stuff
-(setq org-journal-dir (concat org-directory "/journal"))
-
 
 ;; cider
 (add-hook 'cider-repl-mode-hook #'paredit-mode)

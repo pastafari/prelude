@@ -26,3 +26,5 @@ prelude-cheatsheet.el
 prelude-cheatsheet.aux
 prelude-cheatsheet.log
 **/custom.el
+/.mc-lists.el
+/transient
