@@ -1,3 +1,8 @@
+;; set indents for JS to 2
+(setq-default js-indent-level 2)
+(setq-default js2-basic-offset 2)
+(setq-default indent-tabs-mode nil)
+
 ;; Requires rjsx for React stuff
 ;; and adds rjsx as a minor mode to *.js
 (prelude-require-package 'rjsx-mode)
