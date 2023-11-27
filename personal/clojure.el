@@ -39,3 +39,7 @@
 
 ;; cider
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
+
+;; clj-kondo
+(prelude-require-package 'flycheck-clj-kondo)
+(require 'flycheck-clj-kondo)
