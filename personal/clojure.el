@@ -1,6 +1,4 @@
 ;; All clojure-mode and related stuff
-(prelude-require-package 'clj-refactor)
-
 (defun pretty-fns ()
   (font-lock-add-keywords
    nil `(("(\\(fn\\)[\[[:space:]]"
@@ -24,14 +22,6 @@
                                     "∈")
                     nil))))))
 
-
-(defun cljr-clojure-mode-hook ()
-  "Setup cljr within clojure-mode."
-  (clj-refactor-mode 1)
-  (yas-minor-mode 1)
-  (cljr-add-keybindings-with-prefix "C-c C-m"))
-
-(add-hook 'clojure-mode-hook 'cljr-clojure-mode-hook)
 (add-hook 'clojure-mode-hook 'pretty-fns)
 (add-hook 'clojure-mode-hook 'pretty-sets)
 (add-hook 'clojure-mode-hook 'pretty-lambdas)
@@ -39,7 +29,3 @@
 
 ;; cider
 (add-hook 'cider-repl-mode-hook #'paredit-mode)
-
-;; clj-kondo
-(prelude-require-package 'flycheck-clj-kondo)
-(require 'flycheck-clj-kondo)
