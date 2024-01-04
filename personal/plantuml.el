@@ -5,6 +5,8 @@
 (setq plantuml-executable-path "plantuml")
 (setq plantuml-default-exec-mode 'executable)
 (setq plantuml-indent-level 2)
+;; ascii art is more readable than svg!
+(setq plantuml-output-type "txt")
 
 ;; Enable plantuml-mode for PlantUML files
 (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
